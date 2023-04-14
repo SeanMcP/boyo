@@ -9,6 +9,32 @@
     <link rel="stylesheet" href="shared.css">
 </head>
 <body>
-    <main></main>
+    <main>
+        <h1></h1>
+        <nav></nav>
+    </main>
+    <script type="module">
+        import activities from './activities.js';
+
+        const name = sessionStorage.getItem('name');
+        if (!name) {
+            window.location.href = '/';
+        }
+
+        document.querySelector('h1').textContent = `Hello ${name}!`;
+        let linkHTML = '';
+        for (const activity of activities) {
+            const [emoji, label, url, forSamOnly] = activity;
+            if (forSamOnly && name !== 'Samuel') {
+                continue;
+            }
+            linkHTML += `
+            <a href="/view.html?url=${url}">
+                <span aria-hidden="true"role="img">${emoji}</span>
+                <span>${label}</span>
+            </a>`;
+        }
+        document.querySelector('nav').innerHTML = linkHTML;
+    </script>
 </body>
 </html>

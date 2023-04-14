@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Boyo</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="shared.css">
-</head>
-<body>
-    <main></main>
-</body>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="shared.css" />
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        iframe {
+            border: 0;
+            flex-grow: 1;
+            width: 100%;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/home.html">Back</a>
+    </header>
+    <iframe></iframe>
+    <script>
+      const url = new URLSearchParams(window.location.search).get("url");
+      if (!url) {
+        window.location.href = "/home.html";
+      }
+      const iframe = document.querySelector("iframe");
+      iframe.src = url;
+    </script>
+  </body>
 </html>
