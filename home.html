@@ -24,12 +24,13 @@
         document.querySelector('h1').textContent = `Hello ${name}!`;
         let linkHTML = '';
         for (const activity of activities) {
-            const [emoji, label, url, forSamOnly] = activity;
+            const [emoji, label, url, iframeAble, forSamOnly] = activity;
             if (forSamOnly && name !== 'Samuel') {
                 continue;
             }
+            const href = iframeAble ? `/view.html?url=${url}` : url;
             linkHTML += `
-            <a href="/view.html?url=${url}">
+            <a href="${href}">
                 <span aria-hidden="true"role="img">${emoji}</span>
                 <span>${label}</span>
             </a>`;
