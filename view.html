@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Boyo</title>
+    <link rel="shortcut icon" href="socks.png" type="image/png">
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="shared.css" />
     <style>
@@ -33,12 +34,12 @@
     </style>
   </head>
   <body>
-      <a href="/home.html">Back to activities</a>
+      <a href="home.html">Back to activities</a>
     <iframe></iframe>
     <script>
       const url = new URLSearchParams(window.location.search).get("url");
       if (!url) {
-        window.location.href = "/home.html";
+        window.location.href = "home.html";
       }
       const iframe = document.querySelector("iframe");
       iframe.src = url;

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boyo</title>
+    <link rel="shortcut icon" href="socks.png" type="image/png">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="shared.css">
 </head>
@@ -18,7 +19,7 @@
 
         const name = sessionStorage.getItem('name');
         if (!name) {
-            window.location.href = '/';
+            window.location.href = 'index.html';
         }
 
         document.querySelector('h1').textContent = `Hello ${name}!`;
@@ -28,7 +29,7 @@
             if (forSamOnly && name !== 'Samuel') {
                 continue;
             }
-            const href = iframeAble ? `/view.html?url=${url}` : url;
+            const href = iframeAble ? `view.html?url=${url}` : url;
             linkHTML += `
             <a class="banana" href="${href}">
                 <span aria-hidden="true"role="img">${emoji}</span>
