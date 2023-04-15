@@ -12,17 +12,28 @@
             display: flex;
             flex-direction: column;
         }
+        a {
+          background: var(--text);
+          color: var(--background);
+          padding: 1rem;
+          text-align: center;
+          text-decoration: none;
+          transition: all 100ms ease-in-out;
+        }
+        a:is(:focus,:hover) {
+          background: var(--link);
+          letter-spacing: 0.25ch;
+        }
         iframe {
             border: 0;
+            box-shadow: inset 0 0 1rem rgba(0, 0, 0, 0.5);
             flex-grow: 1;
             width: 100%;
         }
     </style>
   </head>
   <body>
-    <header>
-      <a href="/home.html">Back</a>
-    </header>
+      <a href="/home.html">Back to activities</a>
     <iframe></iframe>
     <script>
       const url = new URLSearchParams(window.location.search).get("url");
