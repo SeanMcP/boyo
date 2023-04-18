@@ -5,6 +5,7 @@ export default [
   ["🐷", "Paint Pig", "https://seanmcp.github.io/paint-pig", true, false],
   ["🔦", "Spotlight", "https://seanmcp.github.io/spotlight", true, false],
   ["🧠", "Memory Game", "https://seanmcp.github.io/memory-game", true, false],
+  ["❎", "Multiplication Table", "https://seanmcp.github.io/multiplication-table/", true, true],
   [
     "🦝",
     "Reading Raccoon",
@@ -17,5 +18,5 @@ export default [
   ["🐱", "Bongo Cat", "https://bongo.cat", false, false],
   ["🌲", "Tree builder", "https://reacttraining.com/tree/", true, true],
   ["🧅", "Wick Editor", "https://www.wickeditor.com/editor/", true, true],
-  ["🏀", "Dot dot dot", "http://lalo.li/ddd/", true, true],
+  ["🏀", "Dot dot dot", "http://lalo.li/ddd/", false, true],
 ];
