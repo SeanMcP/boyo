@@ -13,6 +13,7 @@ export default [
     true,
     false,
   ],
+  ["👓", "Reading Practice", "https://seanmcp.github.io/reading-practice", true, false],
   ["🌱", "Khan Academy", "https://khanacademy.org", false, true],
   ["🐲", "Code.org", "https://studio.code.org/sections/LJKCJP", false, true],
   ["🐱", "Bongo Cat", "https://bongo.cat", false, false],
