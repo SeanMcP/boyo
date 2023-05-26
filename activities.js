@@ -14,6 +14,7 @@ export default [
     false,
   ],
   ["👓", "Reading Practice", "https://seanmcp.github.io/reading-practice", true, false],
+  ["🦀", "Sudoku Crab", "https://seanmcp.github.io/sudoku-crab/", true, true],
   ["🌱", "Khan Academy", "https://khanacademy.org", false, true],
   ["🐲", "Code.org", "https://studio.code.org/sections/LJKCJP", false, true],
   ["🐱", "Bongo Cat", "https://bongo.cat", false, false],
