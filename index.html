@@ -1,32 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Boyo</title>
-    <link rel="shortcut icon" href="socks.png" type="image/png">
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="shared.css" />
-  </head>
-  <body>
-    <main>
-      <h1>Choose your animal</h1>
-      <nav class="link-section">
-        <a class="banana" href="home.html" data-name="Samuel"
-          ><span aria-hidden="true" role="img">🦭</span></a
-        >
-        <a class="banana" href="home.html" data-name="Ezra"
-          ><span aria-hidden="true" role="img">🦓</span></a
-        >
-      </nav>
-    </main>
-    <script>
-      document.addEventListener("click", (e) => {
-        if (event.target.dataset.name) {
-          sessionStorage.setItem("name", event.target.dataset.name);
-        }
-      });
-    </script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boyo</title>
+  <link rel="shortcut icon" href="socks.png" type="image/png">
+  <style>
+    :root {
+      --background: white;
+      --text: black;
+      --faint-black: hsl(0, 0%, 0%, 0.25);
+    }
+
+    body {
+      background-color: var(--background);
+      color: var(--text);
+      font-size: 1.2rem;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+
+    main {
+      max-width: 60ch;
+      margin-block: 2rem;
+      margin-inline: auto;
+    }
+
+    main>*+* {
+      margin-block-start: 1rem;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    h1 span {
+      display: none;
+    }
+
+    .sr-only {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    /* Start Sam selected */
+    body:has(input[value="seal"]:checked) h1 span[name="sam"] {
+      display: initial;
+    }
+
+    body:has(input[value="seal"]:checked) nav a:not([for*="s"]) {
+      display: none;
+    }
+
+    /* End Sam selected */
+
+    /* Start Ezra selected */
+    body:has(input[value="zebra"]:checked) h1 span[name="ezra"] {
+      display: initial;
+    }
+
+    body:has(input[value="zebra"]:checked) nav a:not([for*="e"]) {
+      display: none;
+    }
+
+    /* End Ezra selected */
+
+    input[type=radio]:checked+label {
+      background-color: var(--faint-black);
+      color: #fff;
+    }
+
+    form {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    form label {
+      border-radius: 0.5rem;
+      font-size: 1.5rem;
+      padding: 0.25rem 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Let's learn something<span name="sam">&nbsp;Sam</span><span name="ezra">&nbsp;Ezra</span>!</h1>
+    <form>
+      <input class="sr-only" id="seal" type="radio" name="filter" value="seal" />
+      <label for="seal">🦭</label>
+      <input class="sr-only" id="zebra" type="radio" name="filter" value="zebra" />
+      <label for="zebra">🦓</label>
+      <input class="sr-only" id="all" type="radio" name="filter" value="all" checked />
+      <label for="all">🍱</label>
+    </form>
+    <nav>
+      <a for="e|s" href="https://seanmcp.github.io/mouse-practice">🐭 Mouse Practice</a>
+      <a for="e|s" href="https://seanmcp.github.io/spotlight">🔦 Spotlight</a>
+      <a for="e|s" href="https://seanmcp.github.io/turtle-guide">🐢 Turtle Guide</a>
+      <a for="e|s" href="https://seanmcp.github.io/paint-pig">🐷 Paint Pig</a>
+      <a for="e|s" href="https://seanmcp.github.io/keyboard-practice">⌨️ Keyboard Practice</a>
+      <a for="e|s" href="https://seanmcp.github.io/memory-game">🧠 Memory Game</a>
+      <a for="s" href="https://seanmcp.github.io/multiplication-table/">❎ Multiplication
+        Table</a>
+      <a for="s" highlight href="https://seanmcp.github.io/bisum">🦬 Bisum Addition</a>
+      <a for="s" href="https://seanmcp.github.io/sudoku-crab/">🦀 Sudoku Crab</a>
+      <a for="s" href="https://seanmcp.github.io/reading-raccoon">🦝 Reading Raccoon</a>
+      <a for="e" href="https://seanmcp.github.io/reading-practice">👓 Reading Practice</a>
+      <a for="s" href="https://khanacademy.org">🌱 Khan Academy</a>
+      <a for="s" href="https://studio.code.org/sections/LJKCJP">🐲 Code.org</a>
+      <a for="e|s" href="https://bongo.cat">🐱 Bongo Cat</a>
+      <a for="s" href="https://reacttraining.com/tree/">🌲 Tree builder</a>
+      <a for="s" href="https://www.wickeditor.com/editor/">🧅 Wick Editor</a>
+    </nav>
+  </main>
+  <style>
+    nav {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+      text-decoration: none;
+    }
+
+    nav a {
+      align-items: center;
+      border-radius: 0.25rem;
+      border: 2px solid var(--faint-black);
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem;
+      text-decoration: none;
+    }
+
+    nav a:is(:hover, :focus) {
+      border-color: currentColor;
+    }
+
+    nav a[highlight]::after {
+      background: var(--text);
+      border-radius: 2px;
+      color: var(--background);
+      content: "New!";
+      display: inline-block;
+      font-size: small;
+      padding: 1px 2px;
+    }
+  </style>
+</body>
+
 </html>
